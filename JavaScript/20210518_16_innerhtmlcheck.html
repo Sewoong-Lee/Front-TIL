@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function menupan() {
+        var mr = document.getElementsByName('menu');
+        //console.log(mr);
+        //여기에 str공백 선언하면 버튼 누를때마다 항상 초기화 후 진행
+        var str ='';
+        for(var i=0;i<mr.length;i++){
+            if(mr[i].checked){
+                str +=  '<li>'+mr[i].value+ '</li>';
+                //내가 한거
+                //str = mr[i].value;
+                //document.getElementById('mm').innerHTML += str + '<br>';
+            }
+            //선생님은 위의 str에 br하고 += 복합연산자 넣음
+            //리스트도 넣음
+        }document.getElementById('mm').innerHTML = str;
+    }
+    </script>
+
+</head>
+<body>
+    <input type="checkbox" name="menu" value="짬">짬
+    <input type="checkbox" name="menu" value="짜">짜
+    <input type="checkbox" name="menu" value="탕">탕
+    <input type="checkbox" name="menu" value="깐">깐
+    <br> <button onclick="menupan()">확인</button> <br>
+
+    내가 좋아하는 음식은?
+    <div id="mm"></div>
+
+    <script>
+            //확인용
+            // var mr = document.getElementsByName('menu');
+            // console.log(mr.length);
+            // console.log(mr[0].value);
+            // console.log(mr[0].checked);
+    </script>
+</body>
+</html>

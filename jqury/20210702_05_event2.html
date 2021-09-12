@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+</head>
+<body>
+    <h2>배운 언어</h2>
+    <input type="text" id="txtlange">
+    <button class="btnadd">추가</button>
+    <button class="btndelet">삭제</button>
+    <ul id="list">
+
+
+
+    </ul>
+
+    <script>
+        //목록 추가 함수
+        function listppend(){
+            let lange = $('#txtlange').val();
+            console.log(lange);
+
+            //append : 추가 메소드
+            $('#list').append('<li>'+lange);
+
+            //인풋창 클리어
+            $('#txtlange').val('');
+            //인풋창 포커스
+            $('#txtlange').focus();
+        }
+        
+        //추가
+        //인풋창 체인지 (펑션을 읽는 방식)(펑션의 ()를 안넣는단건 주소를 넣겠다)
+        $('.btnadd').on('click', listppend);
+        //포커스가 나가면서 값이 바뀌어 인식 -> 막아줌
+        $('#txtlange').on('keydown', function(e){
+            //if(e.keyCode == 13) //똑같음
+            if(window.event.keyCode == 13){ //엔터를 입력했다면
+                listppend();
+            }
+        });
+
+        //삭제
+        $('.btndelet').click(function(){
+            //리스트 밑의 li 잡음
+            $('#list li:last').remove();
+            //$('#list li').last().remove();
+        });
+
+
+
+        // //버튼 클릭 이벤트 (익명 펑션을 넣는 방식)
+        // $('.btnadd').on('click', function(){
+        //     let lange = $('#txtlange').val();
+        //     console.log(lange);
+
+        //     //append : 추가 메소드
+        //     $('#list').append('<li>'+lange);
+
+        //     //인풋창 클리어
+        //     $('#txtlange').val('');
+        //     //인풋창 포커스
+        //     $('#txtlange').focus();
+        // });
+
+        
+
+    </script>
+
+</body>
+</html>

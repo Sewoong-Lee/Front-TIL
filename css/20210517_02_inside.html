@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인사이트 스타일</title>
+    <!-- 대상을 지정 :  -->
+    <style>
+        /* 전체 선택자 */
+        *{
+            background-color: rgb(192, 237, 255);
+        }
+        /* 태그 선택자 */
+        h2 {
+            background-color: snow; 
+            /* 박스 */
+            border: solid 5px palevioletred;
+            padding: 30px 20px 10px 5px;
+            margin: 50px  300px 50px 30px; 
+            color: navy;
+            background-image: url("../images/레몬백작\ \(1\).jpg");
+            background-size: auto;
+            text-align: center;
+        }
+        p {
+            color: rgb(252, 246, 255);
+            background-image: url("../images/레몬백작\ \(2\).jpg");
+            background-size: 150px 100px;
+            border: solid 30px plum;
+            padding: 10px;
+            margin: 10%;
+        }
+        /* 클래스 선택자 */
+        /* 여러개를 그룹을 묶어서 적용 */
+        .one {
+            background-image: url("../images/사자.png");
+            font: bold;
+            font-size: 15px;
+        }
+        .two {
+            background-image: url("../images/레몬백작\ \(1\).jpg");
+            font: x-large ;
+        }
+        /* 아이디 선택자 */
+        /* 단일로 적용 */
+        #p3 {
+            background-image: url("../images/사자.png");
+            border: whitesmoke solid 10px;
+            color: violet;
+        }
+
+        /* 적용 우선순위 */
+        /* 인라인스타일 -> 아이디 선택자 -> 클래스 -> 태그 ->소스의 순서 */
+        
+    </style>
+</head>
+<body>
+    <h2>내부 스타일</h2>
+    <p class="one">종속형 시트 또는 캐스케이딩 스타일 시트(Cascading Style Sheets, CSS)는 마크업 언어가 실제 표시되는 방법을 기술하는 언어로[1], HTML과 XHTML에 주로 쓰이며, XML에서도 사용할 수 있다. W3C의 표준이며, 레이아웃과 스타일을 정의할 때의 자유도가 높다.</p>
+
+    <p class="two">마크업 언어(ex: HTML)가 웹사이트의 몸체를 담당한다면 CSS는 옷과 액세서리처럼 꾸미는 역할을 담당한다고 할 수 있다. 즉, HTML 구조는 그대로 두고 CSS 파일만 변경해도 전혀 다른 웹사이트처럼 꾸밀 수 있다.</p>
+
+    <p id="p3">현재 개발 중인 CSS3의 경우 그림자 효과, 그라데이션, 변형 등 그래픽 편집 프로그램으로 제작한 이미지를 대체할 수 있는 기능이 추가되었다. 또한 다양한 애니메이션 기능이 추가되어 어도비 플래시를 어느 정도 대체하고 있다.</p>
+    
+
+
+</body>
+</html>

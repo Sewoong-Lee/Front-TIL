@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function imgchang(ani) {
+            //alert(ani);
+            if(ani == 'lemon'){
+            document.getElementById('imgg').src = '../images/레몬백작.jpg';
+            }else if(ani == 'lion'){
+            document.getElementById('imgg').src = '../images/사자.png';
+            }else{
+                alert('잘못된 경로');
+            }
+        }
+    </script>
+</head>
+<body>
+    <img id="imgg" src="../images/사자.png" alt="사자" width="300px">
+
+    <button onclick="imgchang('lion')">사자</button>
+    <button onclick="imgchang('lemon')">레몬</button>
+</body>
+</html>

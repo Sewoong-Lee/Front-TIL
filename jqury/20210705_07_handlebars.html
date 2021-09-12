@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>핸들바</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"> </script> 
+    <script>
+        $(function(){
+            var date = {name : '히히', age:22};
+            var detail = {school : '조은학교', major:'제이쿼리', score:99};
+            //이름과 나이 출력
+            var source = '<h2>이름 : {{name}}</h2> <h2>나이 : {{age}}</h2>';
+            var template = Handlebars.compile(source);
+            template(date);
+            $('#info').html(template(date));
+
+            $('#btn').click(function(){
+                //버튼 클릭시 출신학교, 전공, 점수
+                var source = '<h3>학교 : {{school}}</h3>'+
+                             '<h3>전공 : {{major}}</h3><h3>점수 : {{score}}</h3>';
+                var template = Handlebars.compile(source);
+                $('#detail').html(template(detail));
+            });
+            
+        });
+
+    </script>
+</head>
+<body>
+    <h2>핸들바를 이용한 회원정보</h2>
+    <div id="info"></div>
+    <button id="btn">상세 정보 조회</button>
+    <!-- 버튼 클릭시 출신학교, 전공, 점수 -->
+    <div id="detail"></div>
+</body>
+</html>

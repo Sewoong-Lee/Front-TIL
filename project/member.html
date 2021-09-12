@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function joincheck() {
+            var userid = joinform.userid.value;
+            var userpass = joinform.userpass.value;
+            var userpass2 = joinform.userpass2.value;
+            var useremail = joinform.useremail.value;
+            var userdate = joinform.userdate.value;
+            if(userid == ''){
+                alert('아이디를 입력해 주세요');
+                joinform.userid.focus;
+            }else if(userpass == ''){
+                    alert('비밀번호를 입력해 주세요');
+                    joinform.userpass.focus;
+            }else if(userpass2 == ''){
+                    alert('비밀번호 확인을 입력해 주세요');
+            }else if(useremail == ''){
+                    alert('이메일을 입력해 주세요');
+                    joinform.useremail.focus;
+            }else if(userdate == ''){
+                    alert('생년월일을 입력해 주세요');
+            }else if(userpass != userpass2){
+                    alert('비밀번호가 같지 않습니다.')
+            }else{
+                alert('가입 완료');
+                joinform.submit();
+            }
+
+            
+
+        }
+
+    </script>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <form name="joinform" action="">
+        <table>
+            <tr>
+                <th>아이디</th>
+                <td><input type="text" name="userid"></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+            <td><input type="password" name="userpass"></td>
+            </tr>
+            <tr>
+                <th>비밀번호 확인</th>
+            <td><input type="password" name="userpass2"></td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+            <td><input type="email" name="useremail"></td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td><input type="date" name="userdate"></td>
+            </tr>
+            <tr>
+                <th>가입인사</th>
+                <td><textarea name="memo" cols="22" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" onclick="joincheck()" value="회원가입">
+                    <button type="reset">취소</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

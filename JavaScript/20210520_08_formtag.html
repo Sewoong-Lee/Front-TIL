@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function skillcheck() {
+            //alert(frmskill.skill.value);
+            if (frmskill.skill.value != ''){
+                frmskill.submit();
+            }else{
+                alert('하나라도...');
+            }
+        }
+        //체크박스 체크
+        function hobbycheck() {
+            //alert(frmhobby.hobby.length); //랭스 확인
+            //내가 한거
+            // var c = 0;
+            // for(var i=0;i<frmhobby.hobby.length;i++){
+            //     if(frmhobby.hobby[i].checked){
+            //         c++;
+            //     }
+            // }
+            // if(c > 0){
+            //         alert('전송완');
+            //         frmhobby.submit();
+            // }else{
+            //         alert('하나라도....');
+            // }
+            //선생님 해석
+            var check = false; //체크 박스 여부
+            for(var i=0;i<frmhobby.hobby.length;i++){
+                if(frmhobby.hobby[i].checked){
+                    check = true;
+                }
+            } if(!check){ //펄스 이렇게 해줘야댐
+                alert('하나라도....');
+            }else {
+                alert('전송완');
+                frmhobby.submit();
+            }
+        }
+
+        function slectbox() {
+            alert(frmslelct.dbms.value);
+            frmslelct.submit();
+        }
+        function filesend() {
+            //alert(frmfile.filename.value); //확인
+            if(frmfile.filename.value != ''){
+                alert('전송완');
+                frmfile.submit();
+            }else{
+                alert('파일이 없어영');
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 버튼이 여러개여도 서브밋이 되면 폼 안의 모든데이터가 전송 -->
+    <form name="frmskill">
+        <fieldset>
+            <legend>특기</legend>
+            <input type="radio" name="skill" value="걷기">걷기
+            <input type="radio" name="skill" value="뛰기">뛰기
+            <input type="radio" name="skill" value="달리기">달리기
+            <button type="button" onclick="skillcheck()">전송</button>
+        </fieldset>
+    </form>
+    <form name="frmhobby">
+        <fieldset>
+            <legend>취미</legend>
+            <input type="checkbox" name="hobby" value="게임">게임
+            <input type="checkbox" name="hobby" value="영화">영화
+            <input type="checkbox" name="hobby" value="눕기">눕기
+            <button type="button" onclick="hobbycheck()">전송</button>
+        </fieldset>
+    </form>
+    <form name="frmslelct">
+       <!-- 셀렉터 박스 -->
+       <select name="dbms">
+           <option value="orcle">오라클</option>
+           <option value="java">자바</option>
+           <option value="mysql">mysql</option>
+       </select>
+       <button type="button" onclick="slectbox()">전송</button>
+    </form>
+    <form name="frmfile">
+        <input type="file" name="filename">
+        <button type="button" onclick="filesend()">전송</button>
+    </form>
+
+    
+</body>
+</html>

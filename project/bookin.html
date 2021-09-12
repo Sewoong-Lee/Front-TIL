@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function inser() {
+            var code = inform.code.value;
+            var btype = inform.btype.value;
+            var bname = inform.bname.value;
+            var price = inform.price.value;
+            var susu = inform.susu.value;
+            
+            if(code ==''){
+                alert('코드 미입력');
+            }else if(btype == ''){
+                alert('분류 미입력');
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form name="inform" action="">
+        <table>
+            <tr>
+                <th colspan="2" align="center">상품 등록 페이지</th>
+            </tr>
+            <tr>
+                <th>코드</th>
+                <td><input type="text" name="code"></td>
+            </tr>
+            <tr>
+                <th>분류</th>
+                <!-- <td><input type="text" name="btype"></td> -->
+                <td><select name="btype">
+                    <option value="만화">만화</option>
+                    <option value="게임">게임</option>
+                    <option value="일문">일반문학</option>
+                    <option value="전문">전문서적</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>상품명</th>
+                <td><input type="text" name="bname"></td>
+            </tr>
+            <tr>
+                <th>가격</th>
+                <td><input type="text" name="price"></td>
+            </tr>
+            <tr>
+                <th>할인률</th>
+                <td><input type="text" name="sale"></td>
+            </tr>
+            <tr>
+                <th>수수료</th>
+                <td><input type="text" name="susu"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" 
+                    onclick="inser()" value="확인"> <input type="reset" value="리셋"></td>
+
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

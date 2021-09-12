@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function selectcol(){
+                var colorElem = document.getElementsByClassName('mtcolor');
+            // console.log(colorElem.length);
+            // //배열에 들어가있는거 확인
+            // console.log(colorElem);
+            // //각 배열 확인
+            // console.log(colorElem[0]);
+            // console.log(colorElem[1]);
+            // console.log(colorElem[2]);
+            // //체크 여부 확인
+            // console.log(colorElem[0].checked);
+
+            for (var i=0;i<colorElem.length;i++){
+                if(colorElem[i].checked){
+                    //alert(colorElem[i].value); //확인
+                var cc =  colorElem[i].value;
+                document.getElementById('co').innerHTML 
+                    = '당신이 좋아하는 색은 '+cc+' 입니다.';
+                }
+            }
+            
+        }
+        
+
+    </script>
+</head>
+<body>
+    당신이 좋아하는 색은?
+    <fieldset>
+        <input type="radio" name="mycolor" class="mtcolor" id="red" value="red" onclick="selectcol()">빨강
+        <input type="radio" name="mycolor"  class="mtcolor" id="blue" value="blue" onclick="selectcol()">파랑
+        <input type="radio" name="mycolor"  class="mtcolor" id="yellow" value="yellow" onclick="selectcol()">노랑
+    </fieldset>
+    당신이 좋아하는 색은 : 
+    <div id="co">
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function menuadd() {
+            //alert('메뉴추가');
+            var menu = prompt('점심메뉴는?');  //프롬프트 입력창
+            //엘리먼트 생성
+            var li = document.createElement('li');  //여는테그 닫는테그 전부 생성
+            //<>사이를 노드라고 부름<>
+            //노드 생성
+            var node = document.createTextNode(menu);
+
+            //li의 자식 추가
+            li.appendChild(node); //<li>menu</li>
+
+            //메뉴리스트에 추가
+            document.getElementById('menulist').appendChild(li);
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" value="추가" onclick="menuadd()">
+    <div>
+        <ul id="menulist">
+
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+</head>
+<body>
+    <button id="btn1">색바꾸기</button>
+    <button id="btn2">색바꾸기</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+
+    <script>
+        $('#btn1').dblclick(function(){
+            var txt = prompt('값은?');
+            $('#div1').css('width', '100px').css('height', '50px')
+                    .css('background-color', 'pink').text(txt);
+        });
+
+        //mouseover : 마우스를 버튼에 올렸을때
+        $('#btn2').mouseover(function(){
+            $('#div2').css('width', '100px').css('height', '50px')
+                    .css('background-color', 'yellow').text('1번');
+        });
+
+        //마우스가 버튼에서 벗어낫을때
+        $('#btn2').mouseout(function(){
+            $('#div2').css('width', '100px').css('height', '50px')
+                    .css('background-color', 'blue').text('1번');
+        });
+    </script>
+
+
+
+</body>
+</html>

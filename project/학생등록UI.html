@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ins() {
+            var check = false; 
+            for(var i=0;i<insert.cla.length;i++){
+                if(insert.cla[i].checked){
+                    check = true;
+                }
+            }
+
+            var bun = insert.bun.value;
+            var myname = insert.myname.value;
+            var ga = insert.ga.value;
+            var cla = insert.cla.value;
+
+            if(bun == ''){
+                alert('학번 미입력');
+            }else if(myname == ''){
+                alert('이름 미입력');
+            }else if(ga == ''){
+                alert('학과 미입력');
+            }else if(!check){
+                alert('수강과목 미입력');
+            }else {
+                alert('등록 완료');
+                frmhobby.submit();
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <form action="" name="insert">
+        <table>
+            <tr>
+                <th>학번</th>
+                <td colspan="3"><input type="text" name="bun"></td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td colspan="3"><input type="text" name="myname"></td>
+            </tr>
+            <tr>
+                <th>학과</th>
+                <td colspan="3">
+                    <select name="ga">
+                        <option value=""></option>
+                        <option value="orcle">오라클</option>
+                        <option value="java">자바</option>
+                        <option value="mysql">mysql</option>
+                    </select>
+                    <!-- <input type="" name="ga"></td> -->
+            </tr>
+            <tr>
+                <th>수강과목</th>
+                <td><input type="checkbox" name="cla" value="java">자바</td>
+                <td><input type="checkbox" name="cla" value="jsp">jsp</td>
+                <td><input type="checkbox" name="cla" value="oracle">오라클</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center">
+                    <input type="button" value="등록" onclick="ins()">
+                    <input type="reset" value="취소">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

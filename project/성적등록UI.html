@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function trai(){
+            var a = 's001';
+            var b = '홍길동';
+            var c = '프로그래밍학과';
+            var ss = sungjuc.surch.value;
+
+            if(ss == ''){
+                alert('조회정보 입력');
+            }else if(ss == 's001'){
+                sungjuc.bun1.value = a
+                sungjuc.mename.value = b
+                sungjuc.ga1.value = c;
+            }else{
+                alert('잘못된 조회정보');
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <form action="" name="sungjuc">
+    <table>
+        <tr>
+            <th>학번</th><th>학생코드/명</th>
+            <td colspan="2"><input type="text" name="surch"></td>
+            <td align="center"><input type="button" onclick="trai();" value="조회"></td>
+        </tr>
+        <tr>
+            <th>학번 :</th>
+            <th>이름 :</th>
+            <th>학과 :</th>
+        </tr>
+        <tr>
+            <th><input type="text" name="bun1" value=""></th>
+            <th><input type="text" name="mename" value=""></th>
+            <th><input type="text" name="ga1" value=""></th>
+        </tr>
+
+        <tr>
+            <th>자바</th>
+            <td colspan="2"><input type="text" size="47"></td>
+        </tr>
+        <tr>
+            <th>jsp</th>
+            <td colspan="2"><input type="text" size="47"></td>
+        </tr>
+        <tr>
+            <th>오라클</th>
+            <td colspan="2"><input type="text" size="47"></td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

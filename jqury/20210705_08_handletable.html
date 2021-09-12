@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"> </script> 
+    <!-- 탬플릿 소스 만들기 -->
+    <script id="template1" type="text/x-handlebars-template">
+        <table border="1">
+            <tr>
+                <th>아이디</th>
+                <th>이메일</th>
+                <th>이름</th>
+            </tr>
+            <!-- 핸들바의 반복문 -->
+            <!-- 아래 공백 필수 -->
+            {{#each .}}
+            <tr>
+                <td>{{userid}}</td>
+                <td>{{email}}</td>
+                <td>{{name}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </script>
+
+    <script>
+         var arr = [
+                    {'userid':'qqq', 'email':'1111@naver.com','name':'김씨'},
+                    {'userid':'www', 'email':'222@naver.com','name':'박시'},
+                    {'userid':'eee', 'email':'333@naver.com','name':'양씨'}
+                 ];
+
+        $(function(){
+            $('#btn').click(function(){
+                //스크립트 탬플릿 소스 가져오기 
+                var source = $('#template1').html();
+                console.log(source);
+                
+                var template = Handlebars.compile(source);
+                $('#memberlist').append(template(arr));
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <button id="btn">맴버 리스트 조회</button>
+    <div id="memberlist"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+        $(function(){
+            //손으로 넘기는거
+            // $('.bxslider').bxSlider({
+            //     mode: 'fade',
+            //     captions: true,
+            //     slideWidth: 600
+            // });
+
+            //자동으로 넘어가는거
+            $('.bxslider').bxSlider({
+            auto: true,
+            autoControls: true,
+            stopAutoOnClick: true,
+            pager: true,
+            slideWidth: 600
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div class="bxslider">
+        <div><img src="../images/레몬백작 (1).jpg" title="하하"></div>
+        <div><img src="../images/레몬백작 (2).jpg" title="후후"></div>
+        <div><img src="../images/레몬백작.jpg" title="헤헤"></div>
+    </div>
+    
+</body>
+</html>

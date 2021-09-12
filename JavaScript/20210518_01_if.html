@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //짝홀수 출력, 입력받기
+        // var a = prompt('숫자는?'); //입력받을수 있게 해줌 (스트링형으로 줌)
+        // console.log(typeof a);
+        // if(a%2==0){
+        //     document.write('<h2>짝수<h2>');
+        // }else{
+        //     document.write('<h2>홀수<h2>');
+        // }
+        
+        // //값과 형을 비교
+        // let a = 10, b = '10';
+        // if(a==b){
+        //     document.write('<h2>같다<h2>');
+        // }else{
+        //     document.write('<h2>다르다<h2>');
+        // }  //문자와 숫자여도 비교 가능(값만 비교)
+
+        // if(a===b){  //=을 3개 쓰면 형까지 같은지 비교
+        //     document.write('<h2>같다<h2>');
+        // }else{
+        //     document.write('<h2>다르다<h2>');
+        // }
+
+        // //확인창
+        // var c = confirm('정말로?');
+        // console.log(c);
+        // if(c){ //값 자체가 트루 or 펄스 이므로 비교 안해도댐
+        //     document.write('<h2>탈완<h2>');
+        // }else{
+        //     document.write('<h2>탈취<h2>');
+        // }
+
+        // //실습) 아이디와 패스워드 입력 받기
+        // //아이디 불일치, 패스워드 불일치
+        // var id = 'java';
+        // var psw = '1111';
+
+        // let id1 = prompt('아이디는?');
+        // let psw1 = prompt('비밀번호는?');
+
+        // //방법1
+        // if(id == id1){
+        //     if(psw == psw1){
+        //         document.write('로그인 성공');
+        //     }else{
+        //         document.write('패스워드 불일치');
+        //     }
+        // }else{
+        //     document.write('아이디 불일치');
+        // }
+
+        //방법2 (두개를 한번에 체크)
+        // if(id == id1 && psw == psw1){
+        //         alert('로그인 성공');
+        // }else{
+        //     alert('아이디 불일치');
+        // }
+
+        //펑션 : html에서 입력받은 로그인 정보 체크
+        function logincheck(){
+            //alert('로그인창'); (확인용)
+            var id = 'java';
+            var psw = '1111';
+            //화면에 입력했던 로그인 정보 추출 (아이디를 이용하여 읽겠다.)
+            //var id1 = document.getElementById('id1'); //앨리맨트 통으로 가져옴
+            var id1 = document.getElementById('id1').value; //벨류만 가져옴
+            console.log(id1); //(확인)
+            var psw1 = document.getElementById('psw1').value;
+            console.log(psw1);  //(확인)
+
+            if(id == id1 && psw == psw1){
+                document.write('성공');
+            }else{
+                document.write('실패');
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <!-- 로그인 정보 입력 받기 -->
+    <label>아이디 </label>
+    <!-- 인풋에 아이디 생성 -->
+
+    <input id="id1" type="text" value="java">
+    <input id="psw1" type="password" value="1111" placeholder="패스워드....">
+    <!-- <button>로그인</button>  -->
+    <!-- onclick : 이벤트 설정 (클릭 하면...)  -->
+    <br>
+    <input type="button" value="로그인" onclick="logincheck()">
+    <input type="reset" value="취소">
+
+</body>
+</html>

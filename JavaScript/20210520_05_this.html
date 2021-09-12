@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function selectmenu(menu) {
+            //디스로 선택 엘리멘트를 찍어서 불러옴
+            //alert(menu.value);
+            //console.log(menu);
+            var menuli = document.createElement('li');
+
+            var menunode = document.createTextNode(menu.value);
+
+            menuli.appendChild(menunode);
+
+            //appendChild는 추가 
+            //document.getElementById('me').appendChild(menuli);
+
+            //메뉴 하나만 뜨게
+            var me = document.getElementById('me');
+            me.replaceChild(menunode,me.firstChild);
+        }
+
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>점심메뉴</legend>
+        <input name="menu" type="radio" value="자장면" onclick="selectmenu(this)">자장면
+        <input name="menu" type="radio" value="불고기" onclick="selectmenu(this)">불고기
+        <input name="menu" type="radio" value="라면" onclick="selectmenu(this)">라면
+    </fieldset>
+    <div id="me">
+        
+    </div>
+    
+</body>
+</html>

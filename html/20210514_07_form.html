@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 입력받기</title>
+</head>
+<body>
+    <h1>데이터 입력받기</h1>
+    <!-- form : 데이터 전송을 위함 -->
+    <!-- action : 어디로 전송할지 -->
+    <form action="">
+        <label>이름 : </label><input type="text" name ="name"
+            placeholder="여기에 입력하세요..."><br>
+        <!-- 한쌍으로 묶어주기 -->
+        <label for="password">패스워드 : 
+            <input id="password"type="password" name = "password"></label><br>
+
+        <!-- 숫자 높낮이 설정하는게 같이 나옴 -->
+        <!-- 라벨로 묶어줘서 출생연도 글자 클릭해도 그쪽 같으로감 -->
+        <label for="연도">출생연도</label> 
+            <input id="연도"type="number" min="0" max="3000" name="birthYear"><br>
+
+        <!-- 텍스트 같지만 이메일로하면 형식에 안맞으면 자동 에러 뿌려짐 -->
+        <label>이메일</label> <input type="email" name="email"><br>
+
+        <label>전번</label> <input type="tel" name="tel"><br>
+
+        <!-- name을 같게해서 한쌍으로 묶어서 하나밖에 못고르게 만듬 -->
+        <!-- 서버는 name으로 데이터를 구분 -->
+        <!-- radio는 한개의 데이터만 선택 -->
+        <!-- fieldset 그룹으로 묶어서 출력 -->
+        <fieldset>
+            <!-- legend 그룹명으로 출력 -->
+            <legend>성별</legend>
+            <input type="radio" name="gender">여자
+            <input type="radio" name="gender">남자<br>
+        </fieldset>
+
+        <!-- checkbox : 여러개 선택-->
+        <!-- 중복선택 가능 -->
+        <!-- 네임설정으로 db에 갈때 배열로 가도록 -->
+        <fieldset>
+        <legend>스킬</legend>
+            <input type="checkbox" name="skill">파이썬
+            <input type="checkbox" name="skill">c
+            <input type="checkbox" name="skill">자바
+            <input type="checkbox" name="skill">오라클
+        </fieldset>
+
+        <!-- 셀렉트 박스 _ 수강반 선택 -->
+        강의 선택 <br>
+        <select name="lanGroup">
+            <option>자바</option>
+            <option>파이썬</option>
+            <option>오라클</option>
+        </select><br>
+
+        <!-- 게이지 선택 -->
+        게이지 선택 <br>
+        <input type="range" min="1" max="3" list="mark">
+
+        <label>게이지2</label>
+        <input type="range" list="mark">
+        <datalist id="mark">
+            <option value="0" label="0"></option>
+            <option value="50" label="50"></option>
+            <option value="100" label="100"></option>
+        </datalist><br>
+
+        <!-- 중간 구분선 -->
+        <hr>
+
+        <!-- 날짜 -->
+        <label>입사 날짜</label>
+            <input type="date" name="date">
+        
+        <!-- 중간 구분선 -->
+        <hr>
+
+
+        <!-- 여러줄 데이터 받기 -->
+        <textarea name="content"cols="50" rows="5"></textarea>
+        <hr>
+
+        <!-- 프로그래스 (로딩창) -->
+        <!-- 맥스는 100인데 현재 10이다. -->
+        <progress value="10" max="100"></progress>
+        <hr>
+
+        <!-- 컬러 입력 받기 -->
+        <input type="color">
+
+        <!-- 파일 받기 -->
+        <input type="file">
+
+
+        <!-- 버튼 3종-->
+        <!-- 일반 버튼 -->
+        <input type="button" value="button">
+        <!-- 데이터 전송 기능이 포함된 버튼 : from 안의 데이터를 전송 -->
+        <input type="submit" value="submit">
+        <!-- 데이터 전송 기능이 포함된 버튼 : from 안의 데이터를 전송 -->
+        <button>버튼</button>
+    </form>
+    <!-- 마지막에 폼으로 감싸야함 그래야 입력받은 데이터가 전송됨 -->
+
+
+
+
+
+
+
+</body>
+</html>

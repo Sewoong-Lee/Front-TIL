@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키와 값으로 이루어진 </title>
+    <script>
+        // //key, value
+        // var item = {name:'푸하하',price:13000};
+        // console.log(item);
+        // console.log(item.name);
+        // console.log(item.price);
+        // console.log(item['price']);
+
+        // //
+        // const name = '홍길동';
+        // const age = 20;
+        // const member = {
+        //     name:name,
+        //     age:age
+        // };
+        // console.log(member);
+        // console.log(member.name);
+        // console.log(member.age);
+
+        // //키와 값의 이름이 같다면 변수 생략 가능
+        // const member2 = {
+        //     name,
+        //     age
+        // };
+        // console.log(member2);
+        // console.log(member2.name);
+        // console.log(member2.age);
+
+
+        //실습) 입력한 정보를 오브젝트의 객체로 변환하여 콘솔창에 출력(이건 다시 보자)
+        function keytest() {
+            const userid = memberfrm.userid.value;
+            const password = memberfrm.userpass.value;
+            //console.log(userid);
+           
+            const member3 ={
+                userid,
+                password
+            }
+            console.log(member3['userid']);
+            console.log(member3['password']);
+             //console.log(member3.password);
+        }
+    </script>
+</head>
+<body>
+    <form name="memberfrm">
+        아이디 <input type="text" name="userid">
+        비밀번호 <input type="password" name="userpass">
+        <button type="button" onclick="keytest()">확인</button>
+    </form>
+    
+</body>
+</html>

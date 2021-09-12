@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 테스트</title>
+    <style>
+        *{
+            background-color: honeydew;
+        }
+        #title {
+            background-color:aquamarine;
+            color: rgb(2, 56, 155);
+            text-align: center;
+        }
+
+        .text {
+            background-color: cyan;
+            border: darkblue solid 1px;
+        }
+        .btn1 {
+            background-color: gold;
+            border:goldenrod solid 1px;
+        }
+        .btn2 {
+            background-color: gold;
+            border:goldenrod solid 1px;
+        }
+        .btn3{
+            background-color: gold;
+            border:goldenrod solid 1px;
+        }
+        table{
+            background-color: blanchedalmond;
+            /* 테이블 가운데로 보내기 */
+            margin: auto;
+        }
+        input[type = text], [type = password] {
+            background-color: khaki;
+            /* 100%로 하면 화면의 변화가 있어도 꽉참 */
+            width: 100%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h2 id="title">로그인 테스트</h2>
+    <form>
+        <div>
+        <table>
+            <tr>
+                <th>아이디</th>
+                <td><input class="text" type="text" placeholder="아이디를 입력...."></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input class="text" type="password" placeholder="비밀번호 입력..."></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" >
+                    <button class="btn1">로그인</button>
+                    <input class="btn2" type="reset" value="취소">
+                    <button class="btn3">회원가입</button>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </form>
+
+    
+</body>
+</html>

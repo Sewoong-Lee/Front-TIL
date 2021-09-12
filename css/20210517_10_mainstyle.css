@@ -1,0 +1,97 @@
+        /* 링크로 메인에 스타일 따로 만듬 */
+        :root{
+            --dark-color:rgb(255, 254, 248);
+        }
+        
+        header{
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--dark-color);
+        }
+        #hd1{
+            margin: 15px;
+        }
+        #hd3{
+            margin: 15px;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            justify-content: space-around;   
+
+        }
+        li{
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            padding-top: 25px;
+            align-items: center;
+        }
+        #l1{
+            background-color: rgb(234, 232, 255);
+        }
+        #l2{
+            background-color: rgb(217, 206, 255);
+        }
+        #l3{
+            background-color: rgb(154, 156, 255);
+        }
+        #l4{
+            background-color: rgb(92, 95, 255);
+        }
+        #l5{
+            background-color: rgb(73, 33, 253);
+        }
+
+        section{
+            display: flex;
+            background-color: rgba(255, 246, 246, 0.644);
+            justify-content: center;
+        }
+
+        #s1{
+            background-color: rgb(234, 255, 248);
+            width: 45%;
+            height: 30vh;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid rgb(117, 117, 117); border-radius: 2em;
+            /* 사진 이 div 밖으로 빠지면 안보이게 해줌 */
+            overflow: hidden;
+            
+        }
+        #s2{
+            background-color:rgb(234, 255, 248);
+            width: 45%;
+            height: 30vh;
+            margin: 10px;
+            /* 가운데로 만들기 */
+            text-align: center;
+            /* height: 100px; */
+            line-height: 100px;
+            /* 모서리 둥글게 하기 */
+            border: 1px solid rgb(117, 117, 117); border-radius: 2em;
+        }
+        footer{
+            display: flex;
+            justify-content: space-between; 
+            background-color: rgb(255, 252, 241);
+        }
+        address{
+            margin: 10px;
+        }
+        button{
+            background-color: white;
+        }
+        #img1{
+            margin: 5px;
+            
+        }
+        body{
+            background-color: rgb(255, 247, 255);
+            
+        }
+
+        a{
+            color: tomato;
+        }

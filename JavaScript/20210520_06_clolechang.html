@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            display: flex;
+            width: 100%;
+            border: none;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function changcolor(id) {
+            //console.log(id);  //확인
+            //console.log(id.style.backgroundColor); //확인
+            //아래 두개는 같은게 아님 박스칼라는 그냥 문자열임
+            var boxcolor = id.style.backgroundColor;
+            if(boxcolor == 'red'){
+                id.style.backgroundColor = 'blue'
+            }else{
+                id.style.backgroundColor = 'red';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div onclick="changcolor(this)"></div>
+        <div onclick="changcolor(this)"></div>
+        <div onclick="changcolor(this)"></div>
+        <div onclick="changcolor(this)"></div>
+        <div onclick="changcolor(this)"></div>
+        <div onclick="changcolor(this)"></div>
+        <div onclick="changcolor(this)"></div>
+        <div onclick="changcolor(this)"></div>
+        <div onclick="changcolor(this)"></div>
+        <div onclick="changcolor(this)"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <!-- 자스에서는 작은따옴표로 통일 -->
+    <!-- 자바스크립트는 제이쿼리는 기본으로 추가 라이브러리 사용 -->
+    <script>
+        a = '자바스크립트';  //암시적 선언 (뒤에 들어오는 데이터값으로 형 선언)
+        // document(dom 인터넷 화면) : 내장 객체(이미 객체 선언완료됨)
+        // br을 찍어야 다음줄로 넘어감
+        document.write(a + '<br>'); 
+        // console : 내장 객체
+        // 크롬 f12 개발자도구 -> 콘솔창에서 확인
+        console.log(a);
+        console.log(typeof a);
+
+        //변수 선언 : 명시적 선언 (중복 가능))
+        var a = 10;
+        document.write(typeof a + '<br>');
+        console.log(a);
+        console.log(typeof a);
+
+        var b = 3.14;
+        document.write(typeof b + '<br>');
+        console.log(b);
+        console.log(typeof b);
+
+        //명시적 선언2 : 중복 불가 / 값 변경 됨
+        let c = 20;
+        c = 40;
+        document.write(typeof c + '<br>');
+        console.log(c);
+        console.log(typeof c);
+
+        //const : 상수 선언(변경 불가)
+        const d = 100;
+        console.log(d)
+        //const d = 200; //에러
+
+        document.write('<br>');
+        //산술 연산자 : + - * / %
+        var a = 10;
+        var b = 3;
+        document.write('덧샘' + (a+b) + '<br>');
+        document.write(a-b + '<br>');
+        document.write(a*b + '<br>');
+        document.write(a/b + '<br>');
+        document.write(a%b + '<br>');
+
+        console.log(a+b);
+
+        //반올림,반내림
+        document.write(Math.round(20.55) + '<br>' );
+        console.log(Math.round(20.35) + '<br>' );
+
+        document.write(123.123.toFixed(2) + '<br>' );
+
+        //소수점 자르기
+        var num = 123.1234;
+        var re = num.toFixed(3)
+        document.write(re);
+        console.log(typeof re);
+
+        //문자를 숫자로 바꾸기
+        console.log(typeof Number(re))
+        re *= 1;
+        console.log(typeof re)
+
+        //팝업창
+        //alert(re);
+
+        //날짜
+        var d1 = new Date();
+        console.log(typeof d1); //오브젝트형
+        document.write(d1+'<br>');
+        document.write(d1.getFullYear()+'<br>'); 
+        //월은 0부터 시작되서 +1 해줌
+        document.write((d1.getMonth()+1)+'<br>'); 
+        document.write(d1.getDate()+'<br>');
+        //메소드는 객체 안에 특별한 기능
+        //함수는 
+
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

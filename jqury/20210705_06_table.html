@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        //아이디, 이메일, 이름
+        var arr = [
+            {'userid':'qqq', 'email':'1111@naver.com','name':'김씨'},
+            {'userid':'www', 'email':'222@naver.com','name':'박시'},
+            {'userid':'eee', 'email':'333@naver.com','name':'양씨'}
+        ];
+
+        $(function(){
+            $('#btn').click(function(){
+                $(arr).each(function(i,o){
+                    console.log(i,o.userid, o.email, o.name);
+                    var td1 = $('<td/>').append(o.userid);
+                    var td2 = $('<td/>').append(o.email);
+                    var td3 = $('<td/>').append(o.name);
+
+                    var tr = $('<tr/>').append(td1, td2, td3);
+                   
+                    $('#addtable').append(tr);
+                });
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <h2>테이블</h2>
+    <button id="btn">조회</button>
+    <table id="addtable" border="1">
+        <tr>
+            <th>아이디</th>
+            <th>이메일</th>
+            <th>이름</th>
+        </tr>
+
+    </table>
+</body>
+</html>

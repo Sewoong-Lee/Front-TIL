@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //key,value
+        // var item = {name:'새우깡', price:1000}; 
+        // console.log(item);
+        // console.log(item['name']);
+        // console.log(item['price']);
+
+        // //
+        // const name = '홍길동';
+        // const age = 20;
+        // const member = {
+        //     name:name,
+        //     age:age
+        // };
+        // console.log(member['name']);
+        // console.log(member['age']);
+        // //키와 변수이름 동일할때 변수 생략가능
+        // const member2 = {
+        //     name,
+        //     age
+        // };
+        // console.log(member2['name']);
+        // console.log(member2['age']);
+
+        //입력한정보를 객체로 변환해서 콘솔창에 출력
+        //key,value
+        function loginCheck(){
+            const userid = frmObject.userid.value;
+            const passwd = frmObject.passwd.value;
+            const login = {
+                userid,
+                passwd
+            }
+            console.log(login['userid']);
+            console.log(login['passwd']);
+        }
+    </script>
+</head>
+<body>
+    <form name="frmObject">
+        아이디:<input type="text" name="userid">
+        비밀번호:<input type="password" name="passwd"> <br>
+        <input type="button" value="로그인" onclick="loginCheck()">
+
+    </form>
+</body>
+</html>

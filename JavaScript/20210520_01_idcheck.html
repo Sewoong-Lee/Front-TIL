@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 로그인</title>
+    <script>
+        function login() {
+            var id = document.getElementById('userid');
+            var idd = id.value;
+
+            //innerText 은 태그의 기능을 못함 (br이나 다른거 적용 안됨 오직 텍스트만)
+            //var inf = document.getElementById('info').innerText;
+            var inf = document.getElementById('info').innerHTML;
+            document.getElementById('info').innerHTML = inf + idd + '입장 <br>';
+            id.value = "";
+            document.getElementById('userpass').value = "";
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        아이디
+        <input type="text" id="userid"><br>
+        비밀번호
+        <input type="password" id="userpass"><br>
+        <!-- 서브밋 버튼은 보내면 ?표 붙음  -->
+        <button onclick="login()">로그인</button>
+        <input type="button" onclick="login()" value="로그인2">
+        <div id="info"></div>
+    </form>
+
+</body>
+</html>

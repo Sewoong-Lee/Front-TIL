@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function una() {
+            //너무 길어서 텍스트 불러온걸 변수에 넣음
+            var lanEle = document.getElementById('un');
+            var a = lanEle.value;
+            console.log(a); //(확인)
+            //alert(a);
+            
+            //div창 누적
+            var inn = document.getElementById('aa').innerHTML;
+            document.getElementById('aa').innerHTML = inn + a + '<br>';
+
+            //텍스트창 벨류값 초기화
+            lanEle.value = '';
+            //포커스 이동(기능응 괄호 해야함)
+            lanEle.focus();
+        }
+
+    </script>
+</head>
+<body>
+    사용 가능 언어
+    <input type="text" id="un">
+    <button onclick="una()">추가</button>
+    <hr>
+    사용 가능 언어 리스트 <br>
+    <div id="aa"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 넘기기</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <style>
+        img{
+            width: 100%;
+            height:  250px;
+        }
+    </style>
+    <script>
+        $(function(){
+            var no = 0; //인덱스 번호
+            var arr = [
+                '사자.png',
+                '레몬백작 (1).jpg',
+                '레몬백작.jpg',
+            ];
+
+            $('#next').click(function(){
+                no ++;
+                if(no > arr.length-1){
+                    no = 0;
+                };
+                $('img').attr('src','../images/'+arr[no]);
+            });
+
+            $('#brev').click(function(){
+                no --;
+                if(no < 0){
+                    no = arr.length-1;
+                };
+                $('img').attr('src','../images/'+arr[no]);
+
+            });
+
+        });
+
+        
+    </script>
+</head>
+<body>
+    <img  src="../images/사자.png" alt=""> <br>
+    <button id="brev">이전</button>
+    <button id="next">다음</button>
+</body>
+</html>

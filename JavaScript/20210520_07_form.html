@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function joincheck() {
+            //서버에 데이터를 전송하기 위해 form안에 데이터를 입력(폼의 이름으로)
+            //form의 이름으로 앨리멘트들에 접근
+            var userid = joinform.userid.value;
+            var userpass = joinform.userpass.value;
+            var useremail = joinform.useremail.value;
+            var userdate = joinform.userdate.value;
+            if(userid == ''){//아이디 체크
+                alert('아이디를 입력해 주세요');
+                joinform.userid.focus;
+                //return; //함수 종료(이걸 쓰건가 아니면 else 쓰던가)
+            }else if(userpass == ''){
+                    alert('비밀번호를 입력해 주세요');
+                    joinform.userpass.focus;
+            }else if(useremail == ''){
+                    alert('이메일을 입력해 주세요');
+                    joinform.useremail.focus;
+            }else if(userdate == ''){
+                    alert('생년월일을 입력해 주세요');
+            }else{
+                //form의 데이터를 서버로 보내기
+                joinform.submit();
+            }
+            //기존 방법
+            // var userid = document.getElementById('userid').value;
+            // if(userid == ''){
+            //     alert('아이디를 입력해 주세요');
+            //     document.getElementById('userid').focus
+            //}
+        }
+
+    </script>
+
+</head>
+<body>
+    <h2>회원가입</h2>
+    <form name="joinform" action="">
+        <table>
+            <tr>
+                <th>아이디</th>
+                <td><input type="text" name="userid"></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+            <td><input type="password" name="userpass">
+                <!-- 옵션 넣을거면 아래처럼 대신 골뱅이 안댐 -->
+                <!-- <select name="" id="">
+                    <option value="">@naver.com</option>
+                    <option value="">@hanmail.net</option>
+                </select> -->
+            </td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+            <td><input type="email" name="useremail"></td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td><input type="date" name="userdate"></td>
+            </tr>
+            <tr>
+                <th>가입인사</th>
+                <td><textarea name="memo" cols="22" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <!-- 서브밋을 위에서함 -->
+                    <input type="button" onclick="joincheck()" value="회원가입">
+                    <button type="reset">취소</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    
+
+</body>
+</html>

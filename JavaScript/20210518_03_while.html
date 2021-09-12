@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문</title>
+    <script>
+        //1~10 출력
+        // var a=0;
+        // while(true){
+        //     a++;
+        //     document.write(a+'<br>');
+        //     if(a>9){
+        //         break;
+        //     }
+        // }
+
+
+        //1~100까지의 합을 출력 //
+        function sum(){
+            var a = 0;
+            var num = document.getElementById('num').value;
+            var s = 0;
+            while(true){
+                a++;
+                if(a>num) break;
+                s += a;
+            }
+            //document.write(s);
+            document.getElementById('cal').value = s;
+        }
+
+
+    </script>
+</head>
+<body>
+    최대<input id="num" type="text" >
+    합계 <input id="cal" type="text" value="">
+    <input type="button" value="계산" onclick="sum()">
+
+
+
+</body>
+</html>

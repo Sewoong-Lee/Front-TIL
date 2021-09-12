@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포문</title>
+    <style>
+        .num{
+            color: blue;
+            font-size: x-large;
+        }
+        .j{
+            color: rgb(255, 0, 51);
+            font-size: x-large;
+            font-style: italic;
+        }
+        .h{
+            color: rgb(0, 0, 255);
+            font-size: x-large;
+        }
+    </style>
+    <script>
+        // //포문, 스타일 적용
+        // for (var i=0;i<11;i++){
+        //     document.write('<p class="num">'+i+'</p>');
+        // }
+
+        //실습) 1~10까지 중 짝 홀수 출력
+        //짝수는 빨간색, 홀수는 파란색
+
+        // for(var i=1;i<11;i++){
+        //     if(i%2==0){
+        //         //<span>을 써서 p를 안쓰고도 자유롭게 스타일 적용 가능
+        //         document.write('<p class="j">'+i+' :짝수</p>');
+        //     }else{
+        //         document.write('<p class="h">'+i+' :홀수</p>');
+        //     }
+        // }
+
+        //실습 구구단
+        function gugu(){
+            var d = document.getElementById('num').value;
+            var str ='';
+            for(var i=1;i<10;i++){
+                //document.write('<span>'+d*i+'</span><br>');
+                str += d*i+'<br>';
+            }
+            console.log(str);
+            //html에 집어 넣는다.
+            document.getElementById('dan').innerHTML = str;
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <form>
+    <label>구구단</label>
+    <input id="num" type="text">
+    <input type="button" value="시작1" onclick="gugu()">
+    <!-- 서브밋과 기본버튼은 서버와 통신 (콘솔창 확인) -->
+    <input type="submit" value="시작2" onclick="gugu()">
+    <button onclick="gugu()">시작3</button>
+    <div id="dan">
+
+    </div>
+    </form>
+</body>
+</html>

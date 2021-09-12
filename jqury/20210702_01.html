@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <!-- <script src="js/jquery-3.6.0.js"></script> -->
+    
+
+</head>
+<body>
+    <h3>제이쿼리 스타트</h3>
+
+    <div class="hello"></div>
+    <div id="name"></div>
+
+    <input type="text" value="캬캬캬">
+
+    <script>
+        $('.hello').html('hllo hi! hi!').css('background-color', 'pink');
+        $('#name').text('하하하').css('color', 'red');
+
+        // 매개변수를 넣으면 값을 셋팅하겠다.
+        $('input').val('크라카카');
+        //매개변수를 안넣으면 겟터 하겠다.
+        console.log($('input').val());
+        console.log($('#name').text());
+
+        alert($('.hello').css('background-color')); //컬러 읽기
+
+        
+
+        
+    </script>
+</body>
+
+</html>

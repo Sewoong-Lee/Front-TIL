@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <!-- 폰트어썸 링크 -->
+    <script src="https://kit.fontawesome.com/30485624b3.js" crossorigin="anonymous"></script>
+    <style>
+        i {
+            font-size: 30px;
+            color: lightcoral;
+        }   
+
+    </style>
+    
+    <script>
+        $(function(){
+            //추가버튼을 클릭 했을때
+            $('#btnadd').click(function(){
+                //한꺼번에 삭제하려고 div로 묶음
+                //또는 class="fas fa-minus-square btndelet"로 여러개의 클래스 지정 가능
+                var appendteg = '<div><input type="text">삭제<i id="btndelet" class="fas fa-minus-square"></i></button></div>';
+                $('#stdlist').append(appendteg);
+            });
+            //삭제버튼을 클릭 했을때
+            //동적으로 이후 생성되면 이벤트를 걸어줄수가 없어서 도큐먼트로 먼저 잡고 드감 
+            //$(document).on('click', '.btndelet', function(){
+            //리스트 안에 있으므로 이렇게해도 상관 없다
+            //click mouseover 처럼 두개 이상의 이벤트 추가 가능
+            $('#stdlist').on('click', '#btndelet', function(){
+                //alert('zz');
+                //디스로 클릭한 객체를 찾고, 페어런츠로 버튼의 부모를 찾아 삭제
+                $(this).parent().remove();
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <h2>학생 명단</h2>
+    <button id="btnadd">추가<i class="far fa-plus-square"></i></button> <br>
+    <div id="stdlist">
+       
+
+    </div>
+</body>
+</html>

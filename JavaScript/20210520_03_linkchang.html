@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function linkchang(e) {
+            //e.preventDefault();  //기본 이벤트 제거(콘솔에 찍어보려고 했던거)
+            var linkeml = document.getElementsByName('move');
+            //alert(linkeml);
+            console.log(linkeml);
+            //console.log(linkeml[0].value);
+            for(var i=0;i<linkeml.length;i++){
+                //console.log(linkeml[i].value);
+                //console.log(linkeml[i].checked);
+                if(linkeml[i].checked){
+                    document.getElementById('link').href = linkeml[i].value;
+            }
+        }
+            
+        }
+    </script>
+</head>
+<body>
+    <input name="move" type="radio" value="https://www.naver.com/"> 네이버
+    <input name="move" type="radio" value="https://www.youtube.com/"> 유튭
+    <a id="link" href="http://" onclick="linkchang(event)">이동</a>
+    
+</body>
+</html>

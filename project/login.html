@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function login() {
+            var id = loginform.userid.value;
+            var pass = loginform.uesrpass.value;
+            if(id == ''){
+                alert('아이디를 입력해주세요');
+            }else if(pass == ''){
+                alert('비밀번호를 입력해주세요.');
+            }else{
+                alert(id+'입장');
+            }
+        }
+        function mem() {
+            location.href = 'member.html';
+        }
+    </script>
+    <style>
+        .btn{
+            text-decoration: none;
+            padding: 5px 10px 5px 10px;
+            margin: 10px;
+            transition:all 0.1s;
+            transform: translateY(10px);
+            background-color: cadetblue;
+            border-bottom: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form name="loginform">
+    <table>
+        <tr>
+            <th>아이디</th>
+            <td><input type="text" name="userid"></td>
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td><input type="password" name="uesrpass"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="로그인" onclick="login()"></td>
+            <td><a href="member.html" class="btn">회원가입</a></td>
+            <td><input type="button" value="회원가입" onclick="mem()"></td>
+            
+        </tr>
+    </table>
+    </form>
+    
+</body>
+</html>

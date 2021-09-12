@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function(){
+            //폰트 사이즈 작게
+            $('#sizedown').click(function(){
+                var fsize = $('#txt').css('fontSize');
+                console.log(fsize);
+                fsize = parseFloat(fsize); //숫자만 파싱
+                console.log(fsize -1 );
+
+                $('#txt').css('fontSize', fsize-1 + 'px'); 
+            });
+
+            $('#sizeup').click(function(){
+                var fsize = $('#txt').css('fontSize');
+                console.log(fsize);
+                fsize = parseFloat(fsize);
+                $('#txt').css('fontSize', fsize+1 + 'px');
+            });
+
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <button id="sizedown">점점 작게</button>
+    <button id="sizeup">점점 크게</button>
+
+    <p id="txt">제이퀄이</p>
+    
+</body>
+</html>

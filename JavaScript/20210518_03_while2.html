@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //실습) 난수 생성
+        function ran(){
+            let str = '';
+            let cnt = document.getElementById('cnt').value;
+            alert(cnt);
+            i = 0;
+            while(i<cnt){
+                i++;
+                r = Math.random();
+                console.log(r);
+                str += r +'<br>'
+            }
+            console.log(str);
+            document.getElementById('nan').innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+    난수의 개수는?
+    <input type="text" id="cnt">
+    <button onclick="ran()">생성</button>
+    <div id="nan">
+
+    </div>
+</body>
+</html>

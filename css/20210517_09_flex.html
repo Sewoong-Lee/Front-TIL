@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex box</title>
+    <style>
+        html, body{
+                height: 100%;
+            }
+        #content{
+            /* vh : 보이는 화면을 100%로 잡겠다. */
+            height: 100vh;
+            background-color: wheat;
+            display: flex;
+            /* 오른쪽 기준 */
+            /* reverse : 거꾸로 */
+            /* direction : 방향 */
+            /* flex-direction: row-reverse; */
+
+            /* 한열로 */
+            /* flex-direction: column; */
+
+            /* 인터넷창 작아지면 아래로 빠짐 : 2줄됨 */
+            /* flex-wrap: wrap; */
+            /* 2줄 금지 */
+            /* flex-wrap: nowrap; */
+
+            /* 플로우로 2개 한꺼번에 */
+            flex-flow: row wrap;
+
+            /* 가운데 정렬 */
+            justify-content: center;
+
+            /* 알아서 일정 간격 벌림 */
+            /* 기준측 : 현재 로우임*/
+            /* justify-content: space-around; */
+            /* 오른쪽 왼쪽 붙고 간격 벌림 */
+            justify-content: space-between;
+
+            /* 반대측 */
+            align-items: center;
+            align-content: space-between;
+
+
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+        }
+        .item1{
+            background-color: teal;
+        }
+        .item2{
+            background-color:tomato;
+        }
+        .item3{
+            background-color:turquoise;
+        }
+        .item4{
+            background-color: violet;
+        }
+        .item5{
+            background-color: rgb(226, 215, 255);
+        }
+        .item6{
+            background-color: rgb(187, 183, 255);
+        }
+        .item7{
+            background-color: rgb(165, 145, 255);
+        }
+        .item8{
+            background-color: rgb(163, 93, 255);
+        }
+        .item9{
+            background-color: cadetblue;
+        }
+        .item10{
+            background-color: darkgoldenrod;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 한번에 만들기 {} 안에 $ 넣으면 값도 순번 -->
+    <!-- div#content>div.item.item${$}*10 -->
+    <div id="content">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+    </div>
+
+
+        <!-- 한번에 만들기 -->
+    <!-- div#content>div.item*10 -->
+    <!-- <div id="content">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div> -->
+</body>
+</html>

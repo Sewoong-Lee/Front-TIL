@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인</title>
+    <script>
+        function gogo() {
+            document.getElementById('homeframe').src = 'home.html'
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        <div>책관리 프로젝트 v1.0</div>
+    </header>
+    <nav>
+        <!-- 한번에 쓰기 -->
+        <button onclick="document.getElementById('homeframe').src = 'home.html'">홈</button>
+        <!-- 버튼으로 하기 -->
+        <button onclick="gogo()">홈</button>
+        <a href="home.html" target="homeframe">홈</a>
+        <a href="login.html">로그인</a>
+        <a href="member.html">회원가입</a>
+        <a href="http://">책 등록</a>
+        <a href="http://">책 조회</a>
+    </nav>
+    <section>
+        <iframe name="homeframe" id="homeframe" src="" frameborder="0" ></iframe>
+    </section>
+    <footer>
+        <address>주소 : 어느시 어느동 어느곳</address>
+    </footer>    
+</body>
+</html>
