@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       {{number+1}} <br>
+       {{ message.split('').reverse().join('') }} <br>
+       <!-- split: 문자 하나하나 분리되서 어레이 안에 담겨진다. -->
+       <!-- reverse: 순서가 거꾸로 바뀜 -->
+       <!-- join: 어레이가 스트링으로 합쳐짐 -->
+       {{ reversedMessage }} <br>
+       {{ reversedMessage2() }}
+       <button @click="changeMss">클릭</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+              number:1,
+              message: '안녕하세요',
+            },
+            methods: {
+                reversedMessage2(){
+                    return this.message.split('').reverse().join('');
+                },
+                changeMss(){
+                    this.message='코지코지'; //버튼을 클릭하면 데이터가 바뀜
+                }
+            },
+            computed: { //중복 제거의 효과까지 있다. () 없이 사용
+                reversedMessage(){
+                    return this.message.split('').reverse().join('');
+                }
+                //처음에 data의 속성 정립 이후 computed계산 이후 div에 대입
+                //메소드를 쓰면 data의 정립 이후 div에서 일일히 계산
+            }
+        })
+    </script>
+</body>
+</html>

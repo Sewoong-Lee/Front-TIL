@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form v-on:submit.prevent="submit">
+            <!-- .prevent 으로 기본 이벤트 제거 -->
+            <!-- <input type="text" :value="text" @keyup="updateText"> <br> -->
+            <!-- 키업 이벤트를 활용하여 text 데이터 실시간 변환 -->
+            
+            <input type="text" v-model="text"> <br>
+            <!-- v-model을 활용하여 양방향 바인딩 (함수도 필요가 없다.) -->
+            {{text}} <br>
+            <button type="submit">서브밋</button>
+        </form>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+               year: 2021,
+               text: 'text'
+            },
+            methods: {
+              alert(){
+                  alert('버튼 클릭 이벤트');
+              },
+              plus(){
+                this.year ++;
+              },
+              minus(){
+                this.year --;
+              },
+              submit(){
+                  alert('submit');
+                  console.log('hi');
+              },
+            //   updateText(event){
+            //     console.log(event); //여기 안에서 타겟의 벨류 확인
+            //     this.text = event.target.value;
+            //   }
+            }
+        })
+    </script>
+</body>
+</html>

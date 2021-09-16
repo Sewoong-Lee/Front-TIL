@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{person.qq}} {{person.ww}} <hr>
+        {{nextYear('안녕하세요')}} <hr>
+        <input v-bind:type="type" :value="inputDate">
+        <!-- 바인딩으로 데이터 및 타입 입력 -->
+        <a :href="link">공부하자</a>
+        <a :href="getLink('channel/UCzRDCwJdqSSRwI4BgojVkIw')">공부하자</a>
+
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                person:{ //타고 들어갈 수 있다.
+                    qq: '코코볼', //변수 지정
+                    ww: 30
+                },
+                inputDate: '11',
+                type: 'number',
+                link: 'https://www.youtube.com/'
+            },
+            methods: {
+                getLink(channel){
+                    return this.link + channel; //위의 데이타 링크를 가져옴
+
+                },
+                nextYear(greeting){ //function을 빼고도 작성 가능
+                    return greeting + this.person.qq + '는 내년에' + (this.person.ww + 1) + '살 입니다.';
+                    //return data.person.qq + '는 내년에' + (this.person.ww + 1) + '살 입니다.';
+                    // data를 타고 들어가도 되고 this로도 바로 대입 가능
+                },
+                Method2: function(){
+                    this.nextYear();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

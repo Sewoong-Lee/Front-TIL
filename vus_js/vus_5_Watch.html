@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}} <br>
+       <button @click="changeMss">클릭</button> <br>
+       {{updated}}
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+              message: '안녕하세요',
+              updated: '아니오'
+            },
+            methods: {
+                reversedMessage2(){
+                    return this.message.split('').reverse().join('');
+                },
+                changeMss(){
+                    this.message='코지코지'; //버튼을 클릭하면 데이터가 바뀜
+                }
+            },
+            computed: { //중복 제거의 효과까지 있다. () 없이 사용
+                reversedMessage(){
+                    return this.message.split('').reverse().join('');
+                }
+                //처음에 data의 속성 정립 이후 computed계산 이후 div에 대입
+                //메소드를 쓰면 data의 정립 이후 div에서 일일히 계산
+            },
+            watch: {
+                message(newVal, oldVal){
+                    console.log(newVal, oldVal);
+                    this.updated = '네';
+                }
+            }
+        })
+    </script>
+</body>
+</html>
