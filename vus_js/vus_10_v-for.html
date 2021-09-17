@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <h2>v-for문</h2> 
+    <div id="app">
+        <div>
+            {{people[0].name}} {{people[0].age}}
+        </div>
+        <div>
+            {{people[1].name}} {{people[2].age}}
+        </div>
+        <div>
+            {{people[2].name}} {{people[2].age}}
+        </div>
+        <hr>
+        <div v-for="(person, index) in people" :Key="person.name + '-' + person.age">
+            <!-- Key는 고유한 pk를 바인딩해줌, pk가 하나라면 하나로 잡고 2개라면 2개로 잡는다. -->
+            <!-- key에 인덱스를 넣으면 안좋음(중간에 인덱스가 날아가면 바뀌게됨) -->
+            {{person.name}} {{person.age}} {{index}}
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+               people: [
+                   {name:'a', age:20},
+                   {name:'b', age:21},
+                   {name:'c', age:22},
+                   {name:'d', age:23},
+                   {name:'e', age:24},
+                   {name:'e', age:25},
+               ]
+            },
+            methods: {
+                
+            }
+        })
+    </script>
+</body>
+</html>

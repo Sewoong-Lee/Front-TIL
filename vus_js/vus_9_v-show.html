@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>v-show문</h2> 
+        <!-- v-if는 펄스일때 랜더링을 안하지만 show는 있지만 화면에만 안보임 -->
+        <!-- 매우 자주 바뀔때는 show를 아니면 if를 권장 -->
+        <div v-show="show">Yes</div>
+        <br>
+       <button @Click="updateShow">클릭</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show: false,
+                number: 1
+            },
+            methods: {
+                updateShow(){
+                    this.show = !this.show;
+                },
+                increase(){
+                    this.number++;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

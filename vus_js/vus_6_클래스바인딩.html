@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .font-bold {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>클래스바인딩</h2>
+       <div :class="{red:isRed, bold:isBold}">Hello</div>
+       <div :class="{red:isRed, 'font-bold':isBold}">Hello</div>
+       <!-- 클래스 이름중 - 가 있으면 스트링으로 묶어줘야한다. -->
+       <button @Click="updated">클릭</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+              isRed: false,
+              isBold: false
+            },
+            methods: {
+                updated() {
+                    this.isRed = !this.isRed; //버튼을 누르면 펄스가 트루로 바뀜
+                    this.isBold = !this.isBold;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
