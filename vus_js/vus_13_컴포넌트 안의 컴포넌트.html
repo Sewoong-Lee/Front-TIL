@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <h2>컴포넌트</h2> 
+    <div id="app">
+       <!-- {{name}}
+       <button @click="changText">클릭</button>
+       <hr> -->
+
+       <!-- 전역 컴포넌트 -->
+       <kossiebutten></kossiebutten>
+    </div>
+    <hr><hr>
+    <div id="app-1">
+        <!-- {{name}}
+        <button @click="changText">클릭</button>
+        <hr> -->
+        
+        <kossiebutten></kossiebutten>
+    </div>
+    <script>
+        //전역 등록
+        Vue.component('hello-wold', {
+            template: '<div> hello wold </div>'
+        });
+        Vue.component('kossiebutten', {//컴포넌트 안에 컴포넌트 삽입
+            template: `
+            <div>
+                {{name}}
+                <hello-wold></hello-wold>
+                <button @click="changText">클릭</button>
+            </div>
+            `, //html이 들어감
+            data() { //주소가 넘어가기 때문에 함수로 변경
+                return{
+                    name: 'kossie'
+                }
+            },
+            methods: {
+                changText(){
+                    this.name = 'name update';
+                    //app1의 뷰 변수에 접근
+                }
+            }
+        });
+        const app = new Vue({
+            el: '#app',
+            // data: {
+            //   name: 'name'
+            // },
+            // methods: {
+            //     changText(){
+            //         this.name = 'name update';
+            //         //app1의 뷰 변수에 접근
+            //     }
+            // }
+        })
+
+        const app1 = new Vue({
+            el: '#app-1',
+            // data: {
+            //   name: 'name'
+            // },
+            // methods: {
+            //     changText(){
+            //         //this.name = 'name1 update';
+            //         this.name = 'name update';
+            //     }
+                
+            // }
+        })
+    </script>
+</body>
+</html>
