@@ -3,7 +3,7 @@
   <div>
     <h1>This is Home page</h1>
     <p>{{name}}</p>
-    <KossieCoder/>
+    <KossieCoder title="home title" name1="하하"/>
   </div>
 </template>
 
