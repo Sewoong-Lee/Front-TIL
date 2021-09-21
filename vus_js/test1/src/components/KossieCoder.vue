@@ -1,8 +1,14 @@
 <template>
     <div>
         <h1>{{title}}</h1>
+        <p>header</p>
+        <!-- slot : 부모 컨퍼넌스에서 해당 컨포넌트 안에html 코드를 입력시 여기 들어감 -->
+        <slot name = "header" :kossi="kossi"></slot>
         <p>{{name1}}</p>
         <p>{{name}}</p>
+        <p>body</p>
+        <slot></slot>
+        <p>footer</p>
         <button @click="updated">클릭</button>
     </div>    
 </template>
@@ -27,6 +33,7 @@ export default {
     },
     data(){
         return{
+            kossi : 'coder',
             name : '코지코더 유튜브',
         }
     },
