@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>끝말잇기</title>
+</head>
+<body>
+    <!-- html에서 케밥케이스로 써도 뷰에서 카멜케이스로 읽음 -->
+    <div id="root">
+        <word-relay start-word="제로초"></word-relay>
+        <word-relay start-word="바보"></word-relay>
+        <word-relay start-word="구라"></word-relay>
+    </div>
+</body>
+<script>
+    // word-relay 케밥 케이스
+    // WordRelay 파스칼케이스
+    // wordRelay 카멜케이스
+    Vue.component('word-relay', { //전역 컴포넌트
+        template: `
+            <div>
+                <form v-on:submit="onSubmitForm">
+                    {{word}} <br>
+                    <input type="text" ref="answer" v-model="value">
+                    <button type="submit">입력!</button>
+                    <br>
+                    {{result}}
+                </form>
+            </div>
+        `, // div로 최상위 하나를 묶어줘야한다
+        props: [
+            'startWord',
+        ],
+        data() { 
+            //데이터 객체를 돌려주는 함수로 만듬
+            //여러번 사용되는걸 전제로 사용하기에 데이터가 각각 컴포넌트별로 달라야하므로
+            //여러개를 만들어도 데이터가 다름
+            //컴포넌트는 각자의 데이터를 가지고있다.
+            //컴포넌트를 만드는 스크립트가 가장 상단에
+            return{
+                word: this.startWord,
+                result:'',
+                value: '',
+            }
+        },
+        methods:{
+            onSubmitForm(e){
+                e.preventDefault();
+                if(this.word[this.word.length-1] === this.value[0]){
+                    this.result = '정답';
+                    this.word = this.value;
+                    this.value = '';
+                    this.$refs.answer.focus();
+                }else{
+                    this.result = '땡';
+                    this.value = '';
+                    this.$refs.answer.focus();
+                }
+            }
+        },
+    });
+</script>
+<script>
+    const app= new Vue({
+        el: '#root',
+    });
+</script>
+</html>
