@@ -5,6 +5,7 @@
         
         header{
             display: flex;
+            /* 가운데를 기점으로 떨어뜨리기 */
             justify-content: space-between;
             background-color: var(--dark-color);
         }
