@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div id="root"></div>
+    </body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        function App (){
+            const [counter, serCounter] = React.useState(0); //배열에 직접 담음
+            const onClick = () =>{
+                //serCounter(counter+1); //배열의 함수를 작동시켜 자동으로 리렌더링 실행
+                serCounter((current) => current +1); //counter가 다른곳에서 변경이 있을수 있으므로 함수로 현 값을 정확하게 게산
+            };
+            return(
+                <div>
+                    <h3> 클릭수 : {counter}</h3>
+                    <button onClick={onClick}>클릭</button>
+                </div>
+            );
+        }
+        ReactDOM.render(<App/>, root);
+
+    </script>
+</html>

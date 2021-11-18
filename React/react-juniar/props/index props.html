@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div id="root"></div>
+    </body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        function Btn ({name, big}) { // props로 한번에 여러값 받기 가능 {props.name} 로 읽어야함
+            //console.log(props);
+            console.log(name, big);
+            return <button style={{
+                backgroundColor: "tomato",
+                color: "white",
+                padding: "5px 20px",
+                border: 0,
+                borderRadius: 10,
+                fontSize: big ? 18 : 10,
+            }}>
+                {name}
+            </button>//버튼의 텍스트 변경
+        }
+        
+        function App (){
+            return (
+                <div>
+                    <Btn name="Save Change" big={true}/>
+                    <Btn name="Continue" big={false}/>
+                </div>
+            );
+        }
+        ReactDOM.render(<App/>, root);
+
+    </script>
+</html>

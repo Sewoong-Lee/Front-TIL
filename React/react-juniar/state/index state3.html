@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div id="root"></div>
+    </body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        function App (){
+            const [minutes, setMinutes] = React.useState();
+            const onChange = (event) => {
+                console.log(event.target.value);
+                setMinutes(event.target.value);
+            }
+            return(
+                <div>
+                    <h1 className="hi"> 컨버터</h1>
+                    <label htmlFor="Minutes">Minutes</label>
+                    <input 
+                        value={minutes} 
+                        id="Minutes" 
+                        placeholder="Minutes" 
+                        type="number"
+                        onChange={onChange}
+                    />
+                    <h4>{minutes}</h4>
+                    <label htmlFor="Hours">Hours</label>
+                    <input id="Hours" placeholder="Hours" type="number"/>
+                </div>
+            );
+        }
+        ReactDOM.render(<App/>, root);
+
+    </script>
+</html>

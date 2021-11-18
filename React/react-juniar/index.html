@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div id="root"></div>
+    </body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        // const Title = () => (
+             
+        //     <h3 id="title" onMouseEnter={() => console.log("onmouseenter")}>
+        //         Hello a span
+        //     </h3>
+        // );
+        function Title () { //함수 방법1 = () =>( 이게 펀션에 리턴까지와 같은 내용
+            return (
+            <h3 id="title" onMouseEnter={() => console.log("onmouseenter")}>
+                Hello a span
+            </h3>
+        );
+        }
+        const Btn = () =>( //함수 방법2
+            <button style={{
+                backgroundColor: "tomato",
+            }} onClick={() => console.log('i am click')}
+            >
+                클릭
+            </button>
+
+        );
+        const Container = () => (<div>
+            <Title/> <Btn/> 
+        </div>
+        );
+        ReactDOM.render(<Container/>, root);
+
+        // const h3  = React.createElement(
+        //     "h3", 
+        //     //{id:"sexy-span", style: {color:"red"}}, 
+        //     {
+        //         id:"title",
+        //         onMouseEnter: () => console.log('onmouseenter'),
+        //     },
+        //     "Hello a span"
+        // );
+        // const btn =  React.createElement("button", 
+        //     {
+        //         onClick: () => console.log('i am click'),
+        //         style: {
+        //             backgroundColor: "tomato",
+        //         },
+        //     }, "클릭");
+        //const container =  React.createElement("div", null, [h3, btn]);
+        //ReactDOM.render(container, root);
+    </script>
+</html>

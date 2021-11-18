@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div id="root"></div>
+    </body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        function Btn ({name, changeValue}) { // props로 한번에 여러값 받기 가능 {props.name} 로 읽어야함
+            //console.log(props);
+            console.log(name);
+            return <button 
+                onClick={changeValue}
+                style={{
+                backgroundColor: "tomato",
+                color: "white",
+                padding: "5px 20px",
+                border: 0,
+                borderRadius: 10,
+            }}>
+                {name}
+            </button>//버튼의 텍스트 변경
+        }
+        const MemorizedBtn = React.memo(Btn); //기존의 버튼을 기억하고 Btn이 새로 랜더 되더라도 변경이 없으면 새로 만들지 않음
+        function App (){
+            const [value, setValue] = React.useState("Save Change");
+            const changeValue = () => setValue("Revert Change");
+            return (
+                <div>
+                    <MemorizedBtn name={value} changeValue={changeValue}/>
+                    <MemorizedBtn name="Continue"/>
+                </div>
+            );
+        }
+        ReactDOM.render(<App/>, root);
+
+    </script>
+</html>

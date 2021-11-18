@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div id="root"></div>
+    </body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        function App (){
+            const [amount, setAmount] = React.useState(0);
+            const [inverted, setinverted] = React.useState(false);
+            const onChange = (event) => {
+                console.log(event.target.value);
+                setAmount(event.target.value);
+            }
+            const reset = () => setAmount(0); //리셋 버튼을 클릭하면 스테이트를 0으로
+            const onFlip = () => {
+                reset(); //값 리셋
+                setinverted((current) => !current); //현 상태의 반대를 반환
+            }
+            return(
+                <div>
+                    <h1 className="hi"> 컨버터</h1>
+                    <div>
+                        <label htmlFor="Minutes">Minutes</label>
+                        <input 
+                            value={inverted ? Math.round(amount*60) : amount}
+                            id="Minutes" 
+                            placeholder="Minutes" 
+                            type="number"
+                            onChange={onChange}
+                            disabled={inverted} //값을 변경 못하게 막음
+                        />
+                    </div>
+                    <h4>{amount}</h4>
+                    <div>
+                        <label htmlFor="Hours">Hours</label>
+                        <input 
+                            value={inverted ? amount : Math.round(amount/60)}
+                            id="Hours" 
+                            placeholder="Hours" 
+                            type="number"
+                            onChange={onChange}
+                            //disabled={inverted === false} //값을 변경 못하게 막음
+                            disabled={!inverted}
+                        />
+                    </div>
+                    <button onClick={reset}>리셋</button>
+                    <button onClick={onFlip}>{inverted ? "Turn back" : "invert"}</button>
+                </div>
+            );
+        }
+        ReactDOM.render(<App/>, root);
+
+    </script>
+</html>

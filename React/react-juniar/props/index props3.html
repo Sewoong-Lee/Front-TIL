@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div id="root"></div>
+    </body>
+    <!-- <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script> -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- 프롭스의 형식을 확인해준다. -->
+    <!-- <script src="https://unpkg.com/prop-types@15.6/prop-types.min.js"></script> -->
+    <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+    
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        function Btn ({name, fontSize=25}) { // props로 한번에 여러값 받기 가능 {props.name} 로 읽어야함
+            //console.log(props); //fontSize 에 기본값 적용
+            console.log(name);
+            return <button style={{
+                backgroundColor: "tomato",
+                color: "white",
+                padding: "5px 20px",
+                border: 0,
+                borderRadius: 10,
+                fontSize,
+            }}>
+                {name}
+            </button>//버튼의 텍스트 변경
+        }
+
+        Btn.propTypes  ={ //프롭스의 형식을 확인해준다.
+            name: PropTypes.string.isRequired,
+            fontSize: PropTypes.number.isRequired,//isRequired 필수로 넣어야 한는값
+        };
+        function App (){
+            return (
+                <div>
+                    <Btn name="Save Change" fontSize={18}/>
+                    <Btn name={"continue"}/>
+                </div>
+            );
+        }
+        ReactDOM.render(<App/>, root);
+
+    </script>
+</html>
