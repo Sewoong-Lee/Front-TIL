@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
 
 export default function Profile() {
-  const { id } = useParams();
+  //useParams 사용예시 2개
+  //const { id } = useParams();
+  const params = useParams();
+  const id = params.id;
   console.log(id, typeof id);
   return (
     <div>
